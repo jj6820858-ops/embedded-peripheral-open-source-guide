@@ -9,6 +9,7 @@
 - [传感器：环境、运动、距离、光学、气体、电量等](docs/sensors.md)
 - [显示、输入、通信、存储、音频、电机等外设](docs/peripherals.md)
 - [常见模拟量与开关量模块：土壤、漏水、人体感应等](docs/basic-modules.md)
+- [STM32 与 ESP32 驱动和例程专题](docs/stm32-esp32.md)
 - [通用资源与学习路径](docs/learning.md)
 
 ## 不知道从哪里开始？

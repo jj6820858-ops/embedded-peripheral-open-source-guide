@@ -30,7 +30,7 @@
 | RT-Thread | [Env 使用文档](https://github.com/RT-Thread/rt-thread/blob/master/documentation/env/env.md) · [软件包索引](https://github.com/RT-Thread/packages) | 使用 menuconfig 和软件包工具；确认包版本和 BSP |
 | MicroPython | [SSD1306 官方驱动](https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/display/ssd1306/ssd1306.py) | 按板卡构造 I²C/SPI；MicroPython 与 CircuitPython 库不保证互通 |
 | Raspberry Pi Pico | [Pico SDK 示例](https://github.com/raspberrypi/pico-examples) | C/C++；有多种外设例程，检查板型和 PIO 资源 |
-| ESP-IDF 第三方驱动 | [esp-idf-lib](https://github.com/UncleRus/esp-idf-lib) | 社区组件集合；按组件确认许可证、芯片和 ESP-IDF 版本 |
+| ESP-IDF 第三方驱动 | [esp-idf-lib 新组件入口](https://github.com/esp-idf-lib/core) · [旧版集合（已归档）](https://github.com/UncleRus/esp-idf-lib) | 新旧组件均需核对许可证、芯片和 ESP-IDF 版本；旧集合已停止维护 |
 | STM32duino | [Arduino Core STM32](https://github.com/stm32duino/Arduino_Core_STM32) · [STM32Examples](https://github.com/stm32duino/STM32Examples) | STM32 的 Arduino 支持；选用已支持的板卡和版本 |
 
 ## 一套通用上手流程
