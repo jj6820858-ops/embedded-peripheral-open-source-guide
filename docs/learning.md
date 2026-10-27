@@ -16,6 +16,23 @@
 | [Arduino 库索引](https://www.arduinolibraries.info/) | Arduino | 按型号检索库和版本 |
 | [Linux IIO 文档](https://docs.kernel.org/driver-api/iio/index.html) | Linux | Linux 传感器子系统 |
 
+## 按主控和框架查片上外设例程
+
+片上 UART、I²C、SPI、ADC、定时器的驱动与板外传感器驱动是两层：先根据主控 SDK 配好总线，再接入与传感器型号匹配的驱动。SDK 内不同组件可能使用不同许可证，请按实际使用的文件核对。
+
+| 平台 | 源码和例程入口 | 提示 |
+| --- | --- | --- |
+| 8051 / STC8 | [mcs51-ell](https://github.com/gevico/mcs51-ell) · [uni-STC](https://github.com/area-8051/uni-STC) | 前者覆盖增强型 8051 和 STC8 例程；后者面向 SDCC，不能默认兼容 Keil；均需确认芯片型号 |
+| STM32 | [STM32Cube 各系列入口](https://github.com/STMicroelectronics/STM32Cube_MCU_Overall_Offer) · [STM32CubeF1](https://github.com/STMicroelectronics/STM32CubeF1) | 选择 MCU 对应系列、板卡及 HAL/LL 版本；留意仓库子模块 |
+| MSPM0 | [TI MSPM0 SDK](https://github.com/TexasInstruments/mspm0-sdk) | 查 DriverLib、SysConfig 和对应板卡例程；重新生成配置时避免手改生成文件 |
+| ESP32 | [ESP-IDF examples](https://github.com/espressif/esp-idf/tree/master/examples) | 按具体芯片和 IDF 版本选择片上外设示例 |
+| Zephyr | [BME280 传感器示例](https://github.com/zephyrproject-rtos/zephyr/blob/main/samples/sensor/bme280/README.rst) | 结合板卡设备树、overlay、Kconfig 与 sensor API |
+| RT-Thread | [Env 使用文档](https://github.com/RT-Thread/rt-thread/blob/master/documentation/env/env.md) · [软件包索引](https://github.com/RT-Thread/packages) | 使用 menuconfig 和软件包工具；确认包版本和 BSP |
+| MicroPython | [SSD1306 官方驱动](https://github.com/micropython/micropython-lib/blob/master/micropython/drivers/display/ssd1306/ssd1306.py) | 按板卡构造 I²C/SPI；MicroPython 与 CircuitPython 库不保证互通 |
+| Raspberry Pi Pico | [Pico SDK 示例](https://github.com/raspberrypi/pico-examples) | C/C++；有多种外设例程，检查板型和 PIO 资源 |
+| ESP-IDF 第三方驱动 | [esp-idf-lib](https://github.com/UncleRus/esp-idf-lib) | 社区组件集合；按组件确认许可证、芯片和 ESP-IDF 版本 |
+| STM32duino | [Arduino Core STM32](https://github.com/stm32duino/Arduino_Core_STM32) · [STM32Examples](https://github.com/stm32duino/STM32Examples) | STM32 的 Arduino 支持；选用已支持的板卡和版本 |
+
 ## 一套通用上手流程
 
 1. **确认器件**：识别芯片型号、模块版本、供电范围和支持的总线。查看原厂数据手册和模块原理图。
